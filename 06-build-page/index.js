@@ -66,7 +66,7 @@ fs.readdir(styleFolder, {}, (err, allStyles) => {
       stream.on('readable', function() {
         const data = stream.read()
         if (data != null) {
-          const dataToString = data.toString()
+          const dataToString = data.toString() + '\n\n'
           fs.appendFile(bundleFile, dataToString, (err) => {
             if (err) throw err
           })
